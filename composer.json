@@ -1,0 +1,9 @@
+{
+    "name": "dell/crudcn-simple",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}

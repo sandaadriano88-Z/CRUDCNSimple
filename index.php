@@ -2,6 +2,8 @@
 
 require __DIR__.'/app/view/register.php';
 
+
+
 ?>
 
 <link rel="stylesheet" href="public/style/style.css">

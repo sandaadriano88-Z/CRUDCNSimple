@@ -111,7 +111,7 @@ require_once __DIR__."/../Controller/fetchAll.php";
             gap: 2vh;
          }
          .brand span{
-            padding: 1vh 2vh;
+            padding: 1vh 3vh;
             border-radius: 50%;
             font-size: 7vh;
             background-color: WHITE;

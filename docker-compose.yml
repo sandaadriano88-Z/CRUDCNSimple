@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./Docker/web
+    container_name: php_web
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: mariadb:latest
+    container_name: mariadb_db
+    restart: always
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "yes"
+      MARIADB_DATABASE: CN
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"   # optional, only if you want to connect from outside Docker
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
